@@ -6,6 +6,7 @@ public class PlayerInput : MonoBehaviour
 {
     InputSystem_Actions action;
     Vector2 moveInput;
+    public Vector2 MoveInput => moveInput;
 
     void Awake()
     {
