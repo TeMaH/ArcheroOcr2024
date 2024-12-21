@@ -28,7 +28,9 @@ public class Arrow : MonoBehaviour
             Debug.LogError("Unknown type of data");
         }
 
-        rb.linearVelocity = point * speed;
+        Vector3 direction = (point - rb.position).normalized;
+
+        rb.linearVelocity = direction * speed;
     }
 
     void OnCollisionEnter(Collision collision)
