@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17589737d164f141b6845517f712012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {fileID: 1091420719129458637, guid: fe7b45cdb5a87784ea5e2d03e06ebc8b, type: 3}
   movePlayerInput: {fileID: 0}
   speed: 3
   radius: 5
