@@ -17,7 +17,7 @@ public class BaseCharacter : MonoBehaviour
         get { return movementComponent = movementComponent ? movementComponent : GetComponent<MovementComponent>(); }
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         HealthComponent.SetHealth(health);
     }

@@ -7,7 +7,8 @@ public class PlayerInput : MonoBehaviour
     InputSystem_Actions action;
     Vector2 moveInput;
     public Vector2 MoveInput => moveInput;
-
+    public Action<Vector2> OnMove;
+    
     void Awake()
     {
         action = new InputSystem_Actions();
@@ -15,23 +16,27 @@ public class PlayerInput : MonoBehaviour
 
     void OnEnable()
     {
-        action.Player.Move.performed += Move;
+        action.Player.Move.performed += OnMovePerformed;
+        action.Player.Move.canceled += OnMoveCanceled;
         action.Enable();
     }
 
-    private void Move(InputAction.CallbackContext context)
+    private void OnMovePerformed(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+        OnMove?.Invoke(moveInput);
     }
 
-    void Update()
+    private void OnMoveCanceled(InputAction.CallbackContext context)
     {
-        Debug.Log(moveInput);
+        moveInput = Vector2.zero;
+        OnMove?.Invoke(moveInput);
     }
 
     void OnDisable()
     {
-        action.Player.Move.performed -= Move;
+        action.Player.Move.performed -= OnMovePerformed;
+        action.Player.Move.canceled -= OnMoveCanceled;
         action.Disable();
     }
 }
