@@ -1,23 +1,18 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : MovementComponent
 {
-    [SerializeField] private float speed = 1f;
     [SerializeField] private float moveDuration = 2f;
     [SerializeField] private float waitDuration = 2f;
 
     private Vector3 _moveDirection;
+    
     private float _moveTimer;
     private float _waitTimer;
+    
     private bool _isMoving;
     private bool _isWaiting = true;
-    private CharacterController _controller;
-
-    private void Start()
-    {
-        _controller = GetComponent<CharacterController>();
-    }
 
     private void Update()
     {
@@ -26,12 +21,11 @@ public class EnemyMovement : MonoBehaviour
 
     private void MoveWaitTimer()
     {
-        _moveTimer -= Time.deltaTime;
-
         if (_isMoving)
         {
-            _controller.Move(_moveDirection * (speed * Time.deltaTime));
+            Move(_moveDirection);
 
+            _moveTimer -= Time.deltaTime;
             if (_moveTimer <= 0)
             {
                 _isMoving = false;
