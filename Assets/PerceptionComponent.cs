@@ -5,7 +5,7 @@ public class PerceptionComponent : MonoBehaviour
     public float detectRadius = 5f;
     public float chaseRadius = 10f;
     public LayerMask targetLayer; // Фильтр по слоям (определяет, кого искать)
-    private IDamageable currentTarget;
+    public IDamageable currentTarget;
     void Update()
     {
         if (currentTarget != null)
@@ -38,7 +38,7 @@ public class PerceptionComponent : MonoBehaviour
         }
         return false;
     }
-    public IDamageable GetNearestTarget()
+    protected IDamageable GetNearestTarget()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, detectRadius, targetLayer);
         IDamageable nearestTarget = null;
