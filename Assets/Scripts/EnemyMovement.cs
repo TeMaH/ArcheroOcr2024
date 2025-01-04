@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(CharacterController))]
 public class EnemyMovement : MovementComponent
@@ -13,6 +15,11 @@ public class EnemyMovement : MovementComponent
     
     private bool _isMoving;
     private bool _isWaiting = true;
+
+    private void Start()
+    {
+        _waitTimer = waitDuration;
+    }
 
     private void Update()
     {

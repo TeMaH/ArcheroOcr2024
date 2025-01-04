@@ -144,7 +144,7 @@ MonoBehaviour:
   movementSpeed: 2
   characterController: {fileID: 0}
   moveDuration: 2
-  waitDuration: 2
+  waitDuration: 999999
 --- !u!114 &9013541374233658767
 MonoBehaviour:
   m_ObjectHideFlags: 0
