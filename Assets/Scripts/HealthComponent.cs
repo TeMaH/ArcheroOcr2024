@@ -7,7 +7,7 @@ public class HealthComponent : MonoBehaviour
     [SerializeField] float periodOfHeal = 1.0f;
     [SerializeField] int amountOfAutoHeal = 1;
 
-    Action death;
+    public Action death;
     Action alive;
 
     public float generalHealth { get; private set; }

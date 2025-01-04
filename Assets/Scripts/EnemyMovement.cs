@@ -6,7 +6,7 @@ public class EnemyMovement : MovementComponent
     [SerializeField] private float moveDuration = 2f;
     [SerializeField] private float waitDuration = 2f;
 
-    private Vector3 _moveDirection;
+    public Vector3 _moveDirection {get; private set;}
     
     private float _moveTimer;
     private float _waitTimer;
