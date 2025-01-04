@@ -2,15 +2,14 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour
+public class Level : MonoBehaviour
 {
     [SerializeField] private Transform[] enemiesPos;
     [SerializeField] private Transform heroPos;
-    [SerializeField] private Transform levelGate;
 
     private string _nextSceneName;
 
-    public static LevelManager Instance { get; private set; }
+    public static Level Instance { get; private set; }
 
     public Action OnLevelComplete;
 

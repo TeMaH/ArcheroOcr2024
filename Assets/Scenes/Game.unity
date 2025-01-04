@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b70b5119a61f15049adc8a8b5b61ae02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelPrefab: {fileID: 5113556686510328421, guid: f3a3c36dec17ca34f9b79b205543fe1d, type: 3}
+  levelPrefab: {fileID: 1137139293708683874, guid: f3a3c36dec17ca34f9b79b205543fe1d, type: 3}
   heroPrefab: {fileID: 3331160216336114914, guid: c243c0d2bf7d31d44a25e0beed657b71, type: 3}
   enemiesPrefab:
   - {fileID: 5902876906997310360, guid: 5f0e5a62883ba454b800f50fc364972f, type: 3}

@@ -149,7 +149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5178520687789510584}
-  - component: {fileID: 5113556686510328421}
+  - component: {fileID: 1137139293708683874}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -177,7 +177,7 @@ Transform:
   - {fileID: 8903356027346437470}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5113556686510328421
+--- !u!114 &1137139293708683874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,8 +191,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesPos:
   - {fileID: 8080322715978100888}
+  - {fileID: 8288464194389957196}
   heroPos: {fileID: 4761961291506232755}
-  levelGate: {fileID: 5178520687789510584}
+  levelGate: {fileID: 3346546871380614871}
 --- !u!1 &5560355207178719484
 GameObject:
   m_ObjectHideFlags: 0

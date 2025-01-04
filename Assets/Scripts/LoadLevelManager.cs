@@ -6,14 +6,14 @@ using Random = UnityEngine.Random;
 
 public class LoadLevelManager : MonoBehaviour
 {
-    [SerializeField] private LevelManager levelPrefab;
+    [SerializeField] private Level levelPrefab;
     [SerializeField] private GameObject heroPrefab;
     [SerializeField] private List<GameObject> enemiesPrefab;
     [Space] [SerializeField] private float heroSpawnDelay;
     [SerializeField] private float enemiesSpawnDelay;
     [SerializeField] private string nextSceneName;
 
-    private LevelManager _level;
+    private Level _level;
     private GameObject _hero;
     private List<GameObject> _enemies = new();
 
