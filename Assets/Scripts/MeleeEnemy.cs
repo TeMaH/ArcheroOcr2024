@@ -6,6 +6,7 @@ public class MeleeEnemy : Enemy
     [SerializeField] private float attackCooldown = 1f;
     [SerializeField] private int damage = 15;
     private float _lastAttackTime;
+
     private void Update()
     {
         PerceptionComponent perception = GetPerceptionComponent();
@@ -15,7 +16,7 @@ public class MeleeEnemy : Enemy
             if (perception.currentTarget is Component targetComponent)
             {
                 float distance = Vector3.Distance(transform.position, targetComponent.transform.position);
-                float adjustedAttackRange = attackRange * 0.75f; //коэффициент 
+                float adjustedAttackRange = attackRange * 0.75f; // коэффициент 
 
                 if (distance <= adjustedAttackRange)
                 {
@@ -33,6 +34,7 @@ public class MeleeEnemy : Enemy
             }
         }
     }
+
     private void Attack(IDamageable target)
     {
         Debug.Log($"{gameObject.name} наносит удар по {target}!");

@@ -17,10 +17,12 @@ public class BaseCharacter : MonoBehaviour
     {
         get { return movementComponent = movementComponent ? movementComponent : GetComponent<MovementComponent>(); }
     }
+
     private PerceptionComponent PerceptionComponent
     {
         get { return perceptionComponent = perceptionComponent ? perceptionComponent : GetComponent<PerceptionComponent>(); }
     }
+    
 
     protected virtual void Start()
     {
@@ -30,6 +32,7 @@ public class BaseCharacter : MonoBehaviour
     public HealthComponent GetHealthComponent() => HealthComponent;
 
     public MovementComponent GetMovementComponent() => MovementComponent;
-    
+
     public PerceptionComponent GetPerceptionComponent() => PerceptionComponent;
+
 }

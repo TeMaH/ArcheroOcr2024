@@ -13,8 +13,12 @@ GameObject:
   - component: {fileID: 253187744847782733}
   - component: {fileID: 8446504440710261898}
   - component: {fileID: 8451775400809512395}
+  - component: {fileID: 8100071454946674096}
+  - component: {fileID: -1641436201054553741}
+  - component: {fileID: 7040980323464582912}
+  - component: {fileID: -8010779506551181052}
   m_Layer: 0
-  m_Name: EnemyType3
+  m_Name: MeleeEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +130,80 @@ MonoBehaviour:
   health: 100
   healthComponent: {fileID: 0}
   movementComponent: {fileID: 0}
+  enemyMovement: {fileID: 0}
   perceptionComponent: {fileID: 0}
   attackRange: 2
   attackCooldown: 1
   damage: 15
+--- !u!114 &8100071454946674096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912332138638985666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abcdacd5531cb704ea7d42a6bed2e851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectRadius: 5
+  chaseRadius: 10
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &-1641436201054553741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912332138638985666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33199e6d45c108246b2a3b5d8ca71943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  periodOfHeal: 1
+  amountOfAutoHeal: 1
+--- !u!143 &7040980323464582912
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912332138638985666}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8010779506551181052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912332138638985666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f69f97983663c0469d6674c00d5a3cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 3
+  characterController: {fileID: 7040980323464582912}
+  moveDuration: 2
+  waitDuration: 2
