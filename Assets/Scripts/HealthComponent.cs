@@ -7,7 +7,7 @@ public class HealthComponent : MonoBehaviour
     [SerializeField] float periodOfHeal = 1.0f;
     [SerializeField] int amountOfAutoHeal = 1;
 
-    Action death;
+    public Action<GameObject> death;
     Action alive;
 
     public float generalHealth { get; private set; }
@@ -46,7 +46,7 @@ public class HealthComponent : MonoBehaviour
         if (currentHealth - damage < 1)
         {
             currentHealth = 0;
-            death?.Invoke();
+            death?.Invoke(gameObject);
         }
         else
         {
