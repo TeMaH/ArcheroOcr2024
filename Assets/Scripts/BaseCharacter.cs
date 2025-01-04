@@ -6,6 +6,7 @@ public class BaseCharacter : MonoBehaviour
     [SerializeField] private int health = 100;
     [SerializeField] private HealthComponent healthComponent;
     [SerializeField] private MovementComponent movementComponent;
+    [SerializeField] private PerceptionComponent perceptionComponent;
 
     private HealthComponent HealthComponent
     {
@@ -17,6 +18,12 @@ public class BaseCharacter : MonoBehaviour
         get { return movementComponent = movementComponent ? movementComponent : GetComponent<MovementComponent>(); }
     }
 
+    private PerceptionComponent PerceptionComponent
+    {
+        get { return perceptionComponent = perceptionComponent ? perceptionComponent : GetComponent<PerceptionComponent>(); }
+    }
+    
+
     protected virtual void Start()
     {
         HealthComponent.SetHealth(health);
@@ -25,4 +32,7 @@ public class BaseCharacter : MonoBehaviour
     public HealthComponent GetHealthComponent() => HealthComponent;
 
     public MovementComponent GetMovementComponent() => MovementComponent;
+
+    public PerceptionComponent GetPerceptionComponent() => PerceptionComponent;
+
 }
